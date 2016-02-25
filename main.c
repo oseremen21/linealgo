@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 
 #include <stdlib.h>
@@ -18,13 +19,35 @@ int main() {
   screen s;
   color c;
 
-  c.red = 0;
-  c.green = MAX_COLOR;
-  c.blue = 0;
+  c.red = 255;
+  c.green = 0;
+  c.blue = 147;
     
   clear_screen(s);
   
-  
+  int p, q, r;
+  while(r++ < 255){
+    
+    q++;
+    draw_line(0, 0, XRES-1, YRES-q, s, c);
+    c.red--;
+    c.green++;
+    
+  }
+
+  r = 0;
+  q = 0;
+  c.red = 0;
+  c.green = 255;
+  c.blue = 200;
+  while(r++ < 255){
+    q++;
+    draw_line(XRES-1, 0, 0, YRES-q, s, c);
+    c.red++;
+    c.green--;
+  }
+
+  /*
   //octant 1
   draw_line( 0, 0, XRES-1, YRES - 75, s, c);
   //octant 2
@@ -59,9 +82,9 @@ int main() {
   draw_line( 0, YRES / 2, XRES - 1, YRES / 2, s, c);
   draw_line( XRES / 2, 0, XRES / 2, YRES - 1, s, c);
 
-    
+  */
 
-  display(s);
+  //display(s);
   save_extension(s, "lines.png");
 
   return 0;

@@ -12,15 +12,15 @@ void draw_line(int x0, int y0, int x1, int y1, screen s, color c) {
   
   if (x1 < x0) {
     
-    int temp_x = x0;
+    int xtemp = x0;
     
-    int temp_y = y0;
+    int ytemp = y0;
     
     x0 = x1; 
     y0 = y1;
     
-    x1 = temp_x;
-    y1 = temp_y;
+    x1 = xtemp;
+    y1 = ytemp;
     
   }
   
